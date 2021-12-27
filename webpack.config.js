@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-    entry: './src/math.jsx',
+    entry: './index.jsx',
     output: {
         clean: true,
         path: path.resolve(__dirname, 'dist'),
@@ -53,13 +53,12 @@ module.exports = {
       new HtmlWebpackPlugin(
         {
           title:'app',
-          filename: 'index.html',
-          template:"public/index.html"
+          template:"./public/index.html"
         }
       ),
       new webpack.DefinePlugin(
         {
-          BASE_URL:'./'
+          BASE_URL:"'./'"
         }
       ),
       new CopyPlugin({
