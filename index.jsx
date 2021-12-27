@@ -1,6 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import './src/style/index.css'
+const container = document.getElementById('app');
+
 function formatName(user) {
+    console.log('format name')
     return user.firstName + ' ' + user.lastName;
 }
 
@@ -9,13 +13,12 @@ const user = {
     lastName: 'Perez'
 };
 
-const element = (
-    <h1>
-        Hello, {formatName(user)}!
-    </h1>
-);
+const App = () => {
+    return(
+        <h1>Hellow React and {formatName(user)}</h1>
+    )
+}
 
-ReactDOM.render(
-    element,
-    document.getElementById('app')
-);
+
+const root = ReactDOM.createRoot(container);
+root.render(<App/>)

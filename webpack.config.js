@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 module.exports = {
+  mode:"development",
     entry: './index.jsx',
     output: {
         clean: true,
@@ -11,6 +13,11 @@ module.exports = {
         assetModuleFilename: 'assets/iconfont/[name][hash:6][ext]'
     },
     devtool: 'inline-source-map',
+    devServer: {
+      static: './dist',
+      hot: true,
+      open:true,
+    },
     resolve:{
       extensions:['.js','.css','.vue']
     },
@@ -72,5 +79,6 @@ module.exports = {
 
         ],
       }),
+      new ReactRefreshWebpackPlugin()
     ]
 };

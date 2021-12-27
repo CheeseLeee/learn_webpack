@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack serve"
   },
   "author": "",
   "license": "ISC",
@@ -13,14 +14,17 @@
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^10.2.0",
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "react": "^18.0.0-rc.0-next-3dc41d8a2-20211223",
     "react-dom": "^18.0.0-rc.0-next-3dc41d8a2-20211223",
+    "react-refresh": "^0.11.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.1"
   }
 }
