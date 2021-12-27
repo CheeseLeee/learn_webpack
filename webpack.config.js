@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-    entry: './index.js',
+    entry: './src/math.jsx',
     output: {
         clean: true,
         path: path.resolve(__dirname, 'dist'),
@@ -17,12 +17,22 @@ module.exports = {
     module: {
         rules: [
           {
-            test:/\.jsx?/,
+            test:/\.m?js/,
             exclude: /(node_modules|bower_components)/,
             use:{
               loader: 'babel-loader',
               options: {
                 presets: ['@babel/preset-env']
+              }
+            }
+          },
+          {
+            test:/\.jsx/,
+            exclude: /(node_modules|bower_components)/,
+            use:{
+              loader: 'babel-loader',
+              options: {
+                presets: ["@babel/preset-react"]
               }
             }
           },
