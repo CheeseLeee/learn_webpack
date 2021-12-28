@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin");
+const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
+  mode:'development',
     entry: './index.js',
     output: {
         clean: true,
@@ -14,8 +16,16 @@ module.exports = {
     resolve:{
       extensions:['.js','.css','.vue']
     },
+    devServer:{
+      open:true,
+      hot:true
+    },
     module: {
         rules: [
+          {
+            test:/\.vue/,
+            loader:"vue-loader"
+          },
           {
             test:/\.jsx?/,
             exclude: /(node_modules|bower_components)/,
@@ -40,16 +50,17 @@ module.exports = {
         ],
     },
     plugins:[
+      new VueLoaderPlugin(),
       new HtmlWebpackPlugin(
         {
           title:'app',
           filename: 'index.html',
-          template:"public/index.html"
+          template:"./public/index.html"
         }
       ),
       new webpack.DefinePlugin(
         {
-          BASE_URL:'./'
+          BASE_URL:"'./'"
         }
       ),
       new CopyPlugin({
