@@ -17,7 +17,7 @@ module.exports = {
     module: {
         rules: [
           {
-            test:/\.jsx?/,
+            test:/\.js/,
             exclude: /(node_modules|bower_components)/,
             use:{
               loader: 'babel-loader',
@@ -28,7 +28,9 @@ module.exports = {
           },
           {
             test: /\.css$/i,
-            use: ["style-loader", "css-loader"],
+            use: ["style-loader", "css-loader",{
+              loader:'postcss-loader'
+            }],
           },
           {
             test: /\.(svg|gif|png|jpe?g)/,
@@ -42,14 +44,13 @@ module.exports = {
     plugins:[
       new HtmlWebpackPlugin(
         {
-          title:'app',
           filename: 'index.html',
-          template:"public/index.html"
+          template:"./public/index.html"
         }
       ),
       new webpack.DefinePlugin(
         {
-          BASE_URL:'./'
+          BASE_URL:"'./'"
         }
       ),
       new CopyPlugin({
