@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h2>{{foo}}</h2>
+      <h2>{{getFoo(222)}}</h2>
   </div>
 </template>
  
@@ -12,8 +12,10 @@
             }
         },
         computed:{
-            foo(){
-                return this.name + 'Vue' 
+            getFoo(){
+                return function(num){
+                    return this.name + num
+                }
             }
         }
     }
