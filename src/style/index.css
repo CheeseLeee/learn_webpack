@@ -1,9 +1,0 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-.color-green{
-    color:green;
-    display: flex;
-    transform:translateX(20px)
-}
