@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-    entry: {index:'./index.js',polyfills: './src/polyfills',},
+    entry: {index:'./index.js'},
     output: {
         clean: true,
         path: path.resolve(__dirname, 'dist'),
