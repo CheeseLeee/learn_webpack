@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack')
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-    entry: './index.js',
+    entry: {index:'./index.js',polyfills: './src/polyfills',},
     output: {
         clean: true,
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         assetModuleFilename: 'assets/iconfont/[name][hash:6][ext]'
     },
     devtool: 'inline-source-map',
@@ -36,7 +36,12 @@ module.exports = {
             generator: {
               filename: 'assets/imgs/[name][hash:6][ext]'
             }
-          }
+          },
+          {
+            test: require.resolve('./src/globals.js'),
+            use:
+              'exports-loader?type=commonjs&exports=file,multiple|helpers.parse|parse',
+          },
         ],
     },
     plugins:[

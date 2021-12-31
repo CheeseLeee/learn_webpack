@@ -9,7 +9,3 @@ module.exports = function component() {
     return element;
 }
 
-module.exports = function sayHi() {
-    console.log('hi')
-}
-

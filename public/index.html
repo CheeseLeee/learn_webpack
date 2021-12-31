@@ -10,6 +10,17 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
 		<!-- 配置网页标题 -->
     <title>defalut app</title>
+    <script>
+      const modernBrowser = 'fetch' in window && 'assign' in Object;
+
+      if (!modernBrowser) {
+        const scriptElement = document.createElement('script');
+
+        scriptElement.async = false;
+        scriptElement.src = '/polyfills.bundle.js';
+        document.head.appendChild(scriptElement);
+      }
+    </script>
   </head>
   <body>
 		<!-- 当浏览器不支持js时noscript中的元素就会被渲染 -->
@@ -20,5 +31,6 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+
 </html>
 
