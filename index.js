@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import {add} from './src/math'
 import './src/style/index'
 import './src/assets/font_2805740_3i9dw57ziy7/iconfont.css'
