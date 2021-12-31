@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack serve"
+    "build": "webpack --config ./configs/webpack.common.js --env production",
+    "start": "webpack serve --config configs/webpack.common.js --env devlopment"
   },
   "author": "",
   "license": "ISC",
