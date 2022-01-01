@@ -2,30 +2,24 @@
   "name": "learn_webpack",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config configs/webpack.common.js --env production",
-    "start": "webpack serve --config configs/webpack.common.js --env development"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CheeseLeee/learn_webpack.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CheeseLeee/learn_webpack/issues"
+  },
+  "homepage": "https://github.com/CheeseLeee/learn_webpack#readme",
   "devDependencies": {
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
-    "@babel/preset-react": "^7.16.5",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
-    "babel-loader": "^8.2.3",
-    "copy-webpack-plugin": "^10.2.0",
-    "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
-    "react": "^18.0.0-rc.0-next-3dc41d8a2-20211223",
-    "react-dom": "^18.0.0-rc.0-next-3dc41d8a2-20211223",
-    "react-refresh": "^0.11.0",
-    "style-loader": "^3.3.1",
+    "lodash": "^4.17.21",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.1",
-    "webpack-merge": "^5.8.0"
+    "webpack-cli": "^4.9.1"
   }
 }
